@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background: azure;
+        }
+
+        .in-box {
+            text-align: center;
+        }
+
+        .text input {
+            padding: 15px 40px;
+            border-radius: 10px;
+            /* border: black; */
+        }
+button {
+    border-radius: 10px;
+    padding: 10px;
+}
+.button-section {
+    padding: 30px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+p {
+    text-align: center;
+    background: darkseagreen;
+    margin: 0 25%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+    </style>
+</head>
+
+<body>
+    <div class="in-box">
+        <h3> your text editor</h3>
+        <div class="text">
+            <input placeholder="enter your text" id="input-text">
+            <div class='button-section'>
+
+                <button onclick="color()">color</button>
+                <button onclick="upper_case()">upper case </button>
+                <button onclick="lower_case()">lower case </button>
+                <button onclick="to_bold()"> bold </button>
+                <button onclick="to_Italic()">italic </button>
+                <button onclick="Capitalize_first_world()">Capitalize first word </button>
+            </div>
+        </div>
+    </div>
+    <p id="p"></p>
+    <script>
+   
+        function input_value() {
+            let input_val = document.getElementById("input-text");
+            return input_val
+        }
+        let p_tag = document.getElementById("p");
+
+        function create_ele(val) {
+            p_tag.innerText = val;
+            document.body.append(p_tag);
+        }
+        function color() {
+            let val = input_value().value
+            p_tag.style.color = "red"
+            create_ele(val)
+        }
+        function upper_case() {
+            let val = input_value()
+            p_tag.style.textTransform = "uppercase";
+            create_ele(val.value)
+
+        }
+        function lower_case() {
+            let val = input_value()
+            p_tag.style.textTransform = "lowercase";
+            create_ele(val.value)
+
+        }
+        function to_bold() {
+            let val = input_value()
+            p_tag.style.fontWeight = "900";
+            create_ele(val.value)
+        }
+        function to_Italic() {
+            let val = input_value()
+            p_tag.style.fontStyle = "italic";
+            create_ele(val.value)
+        }
+        function Capitalize_first_world() {
+            let val = input_value().value
+            p_tag.style.textTransform = "Capitalize";
+            create_ele(val);
+        }
+        function text_doc() {
+            let val = document.getElementById("input-text")
+        }
+    </script>
+</body>
+
+</html>
